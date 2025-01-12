@@ -48,3 +48,10 @@ cd kubernetes-projects
 ```
 
 2. Navigate to the desired project directory and follow the README.md file inside each project for deployment instructions.
+
+
+# 📌 Contact Me
+
+If you find these projects helpful or have any questions, feel free to reach out!
+📧 Email: sayyedamaan149@gmail.com
+📱 LinkedIn: www.linkedin.com/in/amaan-sayyed-351593258
