@@ -44,7 +44,6 @@ kubectl: Command-line tool for interacting with Kubernetes clusters
 
 ```bash
 git clone https://github.com/amaan-sayyed/K8s-Projects.git
-cd kubernetes-projects 
 ```
 
 2. Navigate to the desired project directory and follow the README.md file inside each project for deployment instructions.
