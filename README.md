@@ -53,5 +53,5 @@ cd kubernetes-projects
 # 📌 Contact Me
 
 If you find these projects helpful or have any questions, feel free to reach out!
-📧 Email: sayyedamaan149@gmail.com
-📱 LinkedIn: www.linkedin.com/in/amaan-sayyed-351593258
+<br>📧 Email: sayyedamaan149@gmail.com
+<br>📱 LinkedIn: www.linkedin.com/in/amaan-sayyed-351593258
