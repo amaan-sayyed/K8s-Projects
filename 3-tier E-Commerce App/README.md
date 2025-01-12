@@ -17,11 +17,11 @@ This sample microservice application has been built using these technologies:
 - Nginx
 - AngularJS (1.x)
 
-The various services in the sample application already include all required Instana components installed and configured. The Instana components provide automatic instrumentation for complete end to end [tracing](https://docs.instana.io/core_concepts/tracing/), as well as complete visibility into time series metrics for all the technologies.
+<!-- The various services in the sample application already include all required Instana components installed and configured. The Instana components provide automatic instrumentation for complete end to end [tracing](https://docs.instana.io/core_concepts/tracing/), as well as complete visibility into time series metrics for all the technologies.
 
-To see the application performance results in the Instana dashboard, you will first need an Instana account. Don't worry a [trial account](https://instana.com/trial?utm_source=github&utm_medium=robot_shop) is free.
+To see the application performance results in the Instana dashboard, you will first need an Instana account. Don't worry a [trial account](https://instana.com/trial?utm_source=github&utm_medium=robot_shop) is free. -->
 
-## Build from Source
+<!-- ## Build from Source
 To optionally build from source (you will need a newish version of Docker to do this) use Docker Compose. Optionally edit the `.env` file to specify an alternative image registry and version tag; see the official [documentation](https://docs.docker.com/compose/env-file/) for more information.
 
 To download the tracing module for Nginx, it needs a valid Instana agent key. Set this in the environment before starting the build.
@@ -40,9 +40,9 @@ If you modified the `.env` file and changed the image registry, you need to push
 
 ```shell
 $ docker-compose push
-```
+``` -->
 
-## Run Locally
+<!-- ## Run Locally
 You can run it locally for testing.
 
 If you did not build from source, don't worry all the images are on Docker Hub. Just pull down those images first using:
@@ -65,13 +65,13 @@ $ docker-compose -f docker-compose.yaml -f docker-compose-load.yaml up
 
 If you are running it locally on a Linux host you can also run the Instana [agent](https://docs.instana.io/quick_start/agent_setup/container/docker/) locally, unfortunately the agent is currently not supported on Mac.
 
-There is also only limited support on ARM architectures at the moment.
+There is also only limited support on ARM architectures at the moment. -->
 
-## Marathon / DCOS
+<!-- ## Marathon / DCOS
 
 The manifests for robotshop are in the *DCOS/* directory. These manifests were built using a fresh install of DCOS 1.11.0. They should work on a vanilla HA or single instance install.
 
-You may install Instana via the DCOS package manager, instructions are here: https://github.com/dcos/examples/tree/master/instana-agent/1.9
+You may install Instana via the DCOS package manager, instructions are here: https://github.com/dcos/examples/tree/master/instana-agent/1.9 -->
 
 ## Kubernetes
 You can run Kubernetes locally using [minikube](https://github.com/kubernetes/minikube) or on one of the many cloud providers.
