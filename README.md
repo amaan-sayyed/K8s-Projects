@@ -10,7 +10,7 @@ I have a deep understanding of every project in this repository, including the a
 | Project Name            | Description                                           | Status      |
 |-------------------------|-------------------------------------------------------|-------------|
 | **2048 Game on AWS EKS** | Building and deploying a real-time 2048 game application on AWS EKS using Fargate for serverless infrastructure. | ✅ Completed |
-| **3-tier E-Commerce App with Helm on AWS EKS(https://github.com/amaan-sayyed/K8s-Projects/tree/main/3-tier%20E-Commerce%20App)** | Deploying a three-tier e-commerce application using Helm charts on AWS EKS. The project includes a web frontend, application backend, and database tier, showcasing scalable cloud-native architecture. | ✅ Completed |
+| **[3-tier E-Commerce App with Helm on AWS EKS](https://github.com/amaan-sayyed/K8s-Projects/tree/main/3-tier%20E-Commerce%20App)** | Deploying a three-tier e-commerce application using Helm charts on AWS EKS. The project includes a web frontend, application backend, and database tier, showcasing scalable cloud-native architecture. | ✅ Completed |
 
 # 📖 What Makes This Repository Unique?
 
