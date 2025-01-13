@@ -139,3 +139,38 @@ Before starting, make sure you have:
 
 ---
 
+## 🚀 **Steps to Deploy the 3-Tier Architecture**
+
+### **Step 1: Create an IAM User in AWS**
+
+1. Log in to the **AWS Console**.
+2. Search for **IAM** and navigate to the IAM Dashboard.
+3. Go to **Users** → **Create User**.
+4. Provide a name and select **Programmatic Access**.
+5. Attach the **AdministratorAccess** policy (for learning purposes).
+6. Download the **Access Key** and **Secret Key** as a `.csv` file.
+
+---
+
+### **Step 2: Create an EC2 Instance**
+
+1. Go to the **EC2 Dashboard** in AWS.
+2. Click **Launch Instance** and select an **Ubuntu** AMI.
+3. Choose an instance type like `t2.medium`.
+4. Configure security groups to allow **SSH** access.
+5. Launch the instance and connect using **SSH**.
+
+---
+
+### **Step 3: Install Required Tools on the EC2 Instance**
+
+After connecting to the EC2 instance, run the following commands:
+
+#### **Install AWS CLI**
+
+```bash
+sudo apt update
+sudo apt install unzip -y
+curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
+unzip awscliv2.zip
+sudo ./aws/install
