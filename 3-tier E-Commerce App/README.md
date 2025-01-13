@@ -221,3 +221,131 @@ eksctl create cluster --name demo-cluster-three-tier-1 --region us-west-2
 
 ---
 
+### **Step 5: Configure IAM OIDC Provider**
+
+#### **Create an EKS Cluster**
+
+```bash
+export cluster_name=demo-cluster-three-tier-1
+```
+
+#### **Check if OIDC Provider Exists**
+
+```bash
+oidc_id=$(aws eks describe-cluster --name $cluster_name --query "cluster.identity.oidc.issuer" --output text | cut -d "/" -f5)
+aws iam list-open-id-connect-providers | grep $oidc_id
+```
+
+#### **Associate OIDC Provider**
+
+```bash
+eksctl utils associate-iam-oidc-provider --cluster $cluster_name --approve
+```
+
+---
+
+### **Step 6: Set Up the AWS Load Balancer Controller**
+
+#### **Download the IAM Policy**
+
+```bash
+curl -O https://raw.githubusercontent.com/kubernetes-sigs/aws-load-balancer-controller/main/docs/install/iam_policy.json
+```
+
+#### **Create an IAM Policy**
+
+```bash
+aws iam create-policy --policy-name AWSLoadBalancerControllerIAMPolicy --policy-document file://iam_policy.json
+```
+
+#### **Create IAM Role**
+
+```bash
+eksctl create iamserviceaccount \
+   --cluster demo-cluster-three-tier-1 \
+   --namespace kube-system \
+   --name aws-load-balancer-controller \
+   --role-name AmazonEKSLoadBalancerControllerRole \
+   --attach-policy-arn arn:aws:iam::<YOUR-AWS-ACCOUNT-ID>:policy/AWSLoadBalancerControllerIAMPolicy \
+   --approve
+```
+
+---
+
+### **Step 7: Deploy the ALB Controller**
+
+#### **Add the Helm Repository**
+
+```bash
+helm repo add eks https://aws.github.io/eks-charts
+helm repo update
+```
+
+#### **Deploy the ALB Controller**
+
+```bash
+helm install aws-load-balancer-controller eks/aws-load-balancer-controller -n kube-system --set clusterName=demo-cluster-three-tier-1
+```
+
+---
+
+### **Step 8: Deploy the EBS CSI Plugin**
+
+#### **Create an IAM Role**
+
+```bash
+eksctl create iamserviceaccount \
+   --name ebs-csi-controller-sa \
+   --namespace kube-system \
+   --cluster demo-cluster-three-tier-1 \
+   --role-name AmazonEKS_EBS_CSI_DriverRole \
+   --attach-policy-arn arn:aws:iam::aws:policy/service-role/AmazonEBSCSIDriverPolicy \
+   --approve
+```
+
+#### **Install the EBS CSI Plugin**
+
+```bash
+eksctl create addon --name aws-ebs-csi-driver --cluster demo-cluster-three-tier-1 --service-account-role-arn arn:aws:iam::<AWS-ACCOUNT-ID>:role/AmazonEKS_EBS_CSI_DriverRole --force
+```
+
+---
+
+### **Step 9: Deploy the Application Using Helm**
+
+#### **Navigate to the Helm Chart Directory**
+
+```bash
+cd helm
+kubectl create ns robot-shop
+```
+
+#### **Deploy the Helm Chart**
+
+```bash
+helm install robot-shop --namespace robot-shop .
+```
+
+#### **Check the Pods and Services**
+
+```bash
+kubectl get pods -n robot-shop
+kubectl get svc -n robot-shop
+```
+
+#### **Apply Ingress**
+
+```bash
+kubectl apply -f ingress.yaml
+```
+
+---
+
+### **Step 10: Delete the EKS Cluster**
+
+```bash
+eksctl delete cluster --name demo-cluster-three-tier-1 --region us-west-2
+```
+
+---
+
