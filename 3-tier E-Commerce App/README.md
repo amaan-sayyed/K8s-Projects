@@ -137,7 +137,5 @@ Before starting, make sure you have:
 - **Helm** installed
 - **SSH Client**
 
-## 🛠️ **Prerequisites**
-
 ---
 
