@@ -1,4 +1,4 @@
-# Three Tier Architecture Deployment on AWS EKS
+# 📦 Three Tier Architecture Deployment on AWS EKS
 
 Stan's Robot Shop is a sample microservice application you can use as a sandbox to test and learn containerised application orchestration and monitoring techniques. It is not intended to be a comprehensive reference example of how to write a microservices application, although you will better understand some of those concepts by playing with Stan's Robot Shop. To be clear, the error handling is patchy and there is not any security built into the application.
 
@@ -73,14 +73,14 @@ The manifests for robotshop are in the *DCOS/* directory. These manifests were b
 
 You may install Instana via the DCOS package manager, instructions are here: https://github.com/dcos/examples/tree/master/instana-agent/1.9 -->
 
-## Kubernetes
+<!-- ## Kubernetes
 You can run Kubernetes locally using [minikube](https://github.com/kubernetes/minikube) or on one of the many cloud providers.
 
 The Docker container images are all available on [Docker Hub](https://hub.docker.com/u/robotshop/).
 
 Install Stan's Robot Shop to your Kubernetes cluster using the [Helm](K8s/helm/README.md) chart.
 
-To deploy the Instana agent to Kubernetes, just use the [helm](https://github.com/instana/helm-charts) chart.
+To deploy the Instana agent to Kubernetes, just use the [helm](https://github.com/instana/helm-charts) chart. -->
 
 <!-- ## Accessing the Store
 If you are running the store locally via *docker-compose up* then, the store front is available on localhost port 8080 [http://localhost:8080](http://localhost:8080/)
