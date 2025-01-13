@@ -136,3 +136,8 @@ Before starting, make sure you have:
 - **kubectl** installed
 - **Helm** installed
 - **SSH Client**
+
+## 🛠️ **Prerequisites**
+
+---
+
