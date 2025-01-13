@@ -175,6 +175,49 @@ sudo apt install unzip -y
 curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
 unzip awscliv2.zip
 sudo ./aws/install
-````
+```
 
 #### **Install eksctl**
+
+```bash
+curl --silent --location "https://github.com/weaveworks/eksctl/releases/latest/download/eksctl_$(uname -s)_amd64.tar.gz" | tar xz -C /tmp
+sudo mv /tmp/eksctl /usr/local/bin
+eksctl version
+```
+
+#### **Install kubectl**
+
+```bash
+curl -O https://s3.us-west-2.amazonaws.com/amazon-eks/1.28.3/2023-11-14/bin/linux/amd64/kubectl
+chmod +x ./kubectl
+mkdir -p $HOME/bin && cp ./kubectl $HOME/bin/kubectl
+export PATH=$HOME/bin:$PATH
+kubectl version --client
+```
+
+#### **Install Helm**
+
+```bash
+curl -fsSL -o get_helm.sh https://raw.githubusercontent.com/helm/helm/main/scripts/get-helm-3
+chmod 700 get_helm.sh
+./get_helm.sh
+```
+
+---
+
+### **Step 4: Set Up an EKS Cluster**
+
+#### **Configure AWS Settings**
+
+```bash
+aws configure
+```
+
+#### **Create an EKS Cluster**
+
+```bash
+eksctl create cluster --name demo-cluster-three-tier-1 --region us-west-2
+```
+
+---
+
