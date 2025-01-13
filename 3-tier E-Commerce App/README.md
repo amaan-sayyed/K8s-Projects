@@ -126,3 +126,13 @@ $ curl http://<host>:8080/api/cart/metrics
 $ curl http://<host>:8080/api/payment/metrics
 ``` -->
 
+## 🛠️ **Prerequisites**
+
+Before starting, make sure you have:
+
+- **AWS Account**
+- **AWS CLI** installed
+- **eksctl** installed
+- **kubectl** installed
+- **Helm** installed
+- **SSH Client**
