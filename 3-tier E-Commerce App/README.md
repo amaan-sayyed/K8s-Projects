@@ -349,3 +349,7 @@ eksctl delete cluster --name demo-cluster-three-tier-1 --region us-west-2
 
 ---
 
+### **🔗 For a Detailed Step-by-Step Explanation**
+
+For a more detailed and step-by-step guide, including explanations and troubleshooting tips, please check out my blog:
+[Step-by-Step Guide to 3-Tier Architecture Deployment on AWS EKS via Helm](https://amaansayyed.hashnode.dev/step-by-step-guide-to-3-tier-architecture-deployment-on-aws-eks-via-helm)
